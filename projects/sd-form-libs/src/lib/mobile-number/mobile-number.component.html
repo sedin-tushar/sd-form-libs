@@ -1,0 +1,32 @@
+<div class="phone-container">
+  <div class="form-group">
+    <label [for]="'mobileNumber'">{{label}}</label>
+    <div class="row">
+      <div class="col-sm-1">
+        <mat-select [(ngModel)]="selectedCountryCode" (selectionChange)="updateValue()"
+          panelClass="country-code-select-panel">
+          <mat-select-trigger>
+            <div class="select-content">
+              <span class="country-flag" [innerHTML]="getIcon(selectedCountryCode)"></span> <span>
+                {{ selectedCountryCode
+                }}
+              </span>
+            </div>
+          </mat-select-trigger>
+          <mat-option *ngFor="let option of countryCodeOptions" [value]="option.value">
+            <div class="d-flex">
+              <span class="country-flag" [innerHTML]="option.code"></span><span>
+                {{ option.label }}
+              </span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </div>
+      <div class="col-sm-11">
+        <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" (blur)="onTouched()" (input)="updateValue()" placeholder="Enter Mobile Number"
+          class="mobile-number-input">
+      </div>
+      <sd-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></sd-validation-errors>
+    </div>
+  </div>
+</div>
