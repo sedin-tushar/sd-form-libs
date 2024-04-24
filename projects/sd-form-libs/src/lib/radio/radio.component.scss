@@ -1,0 +1,45 @@
+.radio-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: #28293d;
+    font-size: 16;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    position: relative;
+  }
+
+  .required-marker {
+    color: red;
+    position: absolute;
+    top: 0;
+    margin-left: 5px;
+    right: 3;
+    font-size: 14px;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+
+  div label {
+    margin-left: 10px;
+  }
+
+  input[type="radio"] {
+    accent-color: #00A64B;
+    border-radius: 50% !important;
+  }
+
+  input[type="radio"]:focus:checked {
+    box-shadow: 0 0 10px #00A64B;
+    border-radius: 50% !important;
+  }
+
+  input[type="radio"]:checked + label:hover {
+    cursor: pointer;
+  }
+
+}

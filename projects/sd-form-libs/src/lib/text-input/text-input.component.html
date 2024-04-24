@@ -1,0 +1,16 @@
+<div class="form-input-container">
+    <label [for]="label">
+        {{label}}
+        <span *ngIf="isRequired" class="required-marker">*</span>
+    </label>
+
+        <input [type]="type"
+               [id]="label"
+               [formControl]="control"
+               [placeholder]="placeholder"
+               [class.error]="control.invalid && control.touched"
+               [class.prefix-input]="isPrefix"
+        />
+
+    <sd-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></sd-validation-errors>
+</div>

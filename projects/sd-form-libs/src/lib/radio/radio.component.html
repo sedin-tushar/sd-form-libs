@@ -1,0 +1,13 @@
+<div class="radio-wrapper">
+  <label>
+    {{label}}
+    <span *ngIf="isRequired" class="required-marker">*</span>
+  </label>
+  <div *ngFor="let option of options">
+    <input type="radio" [id]="option.value + '_id'" [value]="option.value" [formControl]="control" (blur)="onTouch()">
+    <label [for]="option.value + '_id'">{{ option.label }}</label>
+  </div>
+</div>
+
+
+

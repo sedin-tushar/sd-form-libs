@@ -1,0 +1,5 @@
+<div *ngIf="invalid && touched">
+    <div *ngFor="let error of errors | keyvalue" class="error">
+        {{ errorMessages[error.key] }}
+    </div>
+</div>

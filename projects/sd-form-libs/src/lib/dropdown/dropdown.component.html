@@ -1,0 +1,10 @@
+<div class="dropdown-container">
+  <label *ngIf="label" >
+    {{label}}
+    <span *ngIf="isRequired" class="required-marker">*</span>
+  </label>
+    <select [formControl]="control"  (blur)="onTouched()" onfocus='this.size=4;' onblur='this.size=0;' onchange='this.size=1; this.blur();' >
+      <option value="" disabled selected>Select your Experience</option>
+      <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+    </select>
+  </div>

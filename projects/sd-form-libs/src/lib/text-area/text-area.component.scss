@@ -1,0 +1,46 @@
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  label {
+    color: #28293d;
+    font-size: 16;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    position: relative;
+  }
+
+  .required-marker {
+    color: red;
+    position: absolute;
+    top: 0;
+    margin-left: 5px;
+    right: 3;
+    font-size: 14px;
+
+    &:hover {
+      color: darkred;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input:focus{
+    border-color: #8638E5;
+    outline: none;
+  }
+
+  .error {
+    border-color: red;
+  }
+
+
