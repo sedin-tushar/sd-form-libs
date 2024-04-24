@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MobileTransformPipe } from '../pipes/mobile-transform.pipe';
 
 @Component({
-  selector: 'app-mobile-number',
+  selector: 'sd-mobile-number',
   standalone: true,
   imports: [
     CommonModule,
