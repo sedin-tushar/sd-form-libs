@@ -33,12 +33,12 @@ export function mobileNumberValidator(control: FormControl<{ mobile: string; cou
 
 
   const isValidMobile = countryCodeValidations[countryCodeVal] && countryCodeValidations[countryCodeVal](mobileVal);
-  if (isValidMobile) {
-    return '';
-  } else {
-    return { invalidMobile: true };
+    if (isValidMobile) {
+      return '';
+    } else {
+      return { invalidMobile: true };
+    }
   }
-}
 
 
 
