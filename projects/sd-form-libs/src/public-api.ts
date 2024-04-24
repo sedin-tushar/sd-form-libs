@@ -6,3 +6,5 @@ export * from './lib/text-area/text-area.component';
 export * from './lib/validation-errors/validation-errors.component';
 export * from './lib/helpers/form-control-helper';
 export * from './lib/helpers/custom-validators';
+export * from './lib/mobile-number/mobile-number.component'
+export * from './lib/services/icons/icon.service'
