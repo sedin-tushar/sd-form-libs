@@ -28,8 +28,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "styles": [
-              "projects/sd-form-libs/src/styles.scss",
-              "@angular/material/prebuilt-themes/indigo-pink.css"
+              "projects/sd-form-libs/src/styles.scss"
             ],
             "tsConfig": "projects/sd-form-libs/tsconfig.spec.json",
             "polyfills": [
