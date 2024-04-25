@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit  } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/for
   styleUrls: ['./validation-errors.component.scss'],
 
 })
-export class ValidationErrorsComponent {
+export class ValidationErrorsComponent implements OnInit {
   @Input() errors: Record<string, ValidationErrors> | null = {};
   @Input() invalid: boolean = false;
   @Input() touched: boolean = false;
@@ -49,5 +49,17 @@ export class ValidationErrorsComponent {
     color: 'Enter a valid color',
     fileExtensions: 'Invalid file extension',
     fileSize: 'File size exceeds the limit',
+  }
+
+  ngOnInit(): void {
+    if (this.errors) {
+      Object.keys(this.errors).forEach((key) => {
+        if (!this.errorMessages[key]) {
+          const errorValue = this.errors && this.errors[key];
+          const errorMessage = errorValue &&  errorValue[1].errorMessage;
+          this.errorMessages[key] = errorMessage;
+        }
+      });
+    }
   }
 }
